@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Navbar from './Components/Navbar';
 import TextForm from './Components/TextForm';
+// import About from './Components/About';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
     <div className="container">
       
     <TextForm heading = "Enter text to Analyze" />
+    {/* <About/> */}
     </div>
     </>
    ); 
