@@ -6,12 +6,14 @@ import Navbar from './Components/Navbar';
 import TextForm from './Components/TextForm';
 import Alert from './Components/Alert';
 // import About from './Components/About';
-
+// import {
+//   BrowserRouter,
+//   Route,
+//   Routes,
+// } from "react-router-dom";
 
 function App() {
   const [mode, setMode] = useState('light');
-  // const [redmode, setRedMode] = useState('light');
-  // const [greenmode, setGreenMode] = useState('light');
   const [alert, setAlert] = useState(null);
   
   const showAlert = (message,type) =>{
@@ -35,35 +37,41 @@ function App() {
       showAlert("Light mode has been enabled","success");
     }
   }
-  // const toggleModeRed = () =>{
-  //   if(mode ==='light'){
-  //     setRedMode ('red');
-  //     document.body.style.backgroundColor = '#DB4437';
-  //     showAlert("red mode has been enabled","success");
-  //   }else{
-  //     setRedMode ('light');
-  //     document.body.style.backgroundColor = "white";
-  //     showAlert("Light mode has been enabled","success");
-  //   }
-  // }
-  // const toggleModeGreen = () =>{
-  //   if(mode ==='light'){
-  //     setGreenMode ('green');
-  //     document.body.style.backgroundColor = '#0F9D58';
-  //     showAlert("red mode has been enabled","success");
-  //   }else{
-  //     setGreenMode ('light');
-  //     document.body.style.backgroundColor = "white";
-  //     showAlert("Light mode has been enabled","success");
-  //   }
-  // }
+
   return (
+    // <>
+    //   <BrowserRouter>
+    //     <Navbar
+    //       title="TextUtils2"
+    //       aboutText="About Us"
+    //       mode={mode}
+    //       toggleMode={toggleMode}
+    //     />
+    //     <Alert alert={alert} />
+    //     <div className="container my-4" mode={mode}>
+    //       <Routes>
+    //         <Route exact path="/about" element={<About />}></Route>
+    //         <Route
+    //           exact path="/"
+    //           element={
+    //             <TextForm
+    //               showAlert={showAlert}
+    //               heading="Enter Text to analyze "
+    //               mode={mode}
+    //             />
+    //           }
+    //         ></Route>
+    //       </Routes> 
+    //     </div>
+    //   </BrowserRouter>
+    // </>
+
     <>  
     <Navbar title = "TextUtils" mode = {mode} toggleMode = {toggleMode}   />
     <Alert alert={alert}/>
     <div className="container">
       
-    <TextForm heading = "Enter text to Analyze" mode = {mode}  />
+    <TextForm showAlert={showAlert} heading = "Enter text to Analyze" mode = {mode}  />
     {/* <About/> */}
     </div>
     </>
